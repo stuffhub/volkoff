@@ -198,7 +198,7 @@ header {
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  z-index: 2; }
+  z-index: 4; }
   .arrow:after {
     content: '';
     position: absolute;
