@@ -1,0 +1,184 @@
+$pink: #A2508A
+$purple: #32273C
+$turq: #4ECAA3
+=mq($val)
+    @media screen and (min-width:$val)
+        @content
+=tf($val...)
+    -moz-transform: $val
+    -o-transform: $val
+    -ms-transform: $val
+    -webkit-transform: $val
+    transform: $val
+=ts($val...)
+    -moz-transition: $val
+    -o-transition: $val
+    -webkit-transition: $val
+    transition: $val
+header
+    background: $purple
+    .container
+        padding: 15px
+    .fl
+        justify-content: space-between
+        align-items: center
+.toggle-menu
+    width: 30px
+    height: 20px
+    cursor: pointer
+    color: #fff
+    &:after
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        height: 30px
+        width: 30px
+        cursor: pointer
+        z-index: 2
+        +tf(translate(-50%,-50%))
+    &__line
+        position: absolute
+        display: block
+        height: 2px
+        width: 100%
+        background: $turq
+        z-index: 1
+        &:first-child
+            top: 0
+            left: 0
+            +ts(transform 0.3s, top 0.3s)
+        &:nth-child(2)
+            top: 50%
+            right: 0
+            opacity: 1
+            +tf(translateY(-50%))
+            +ts(right 0.3s, opacity .3s)
+        &:last-child
+            bottom: 0
+            left: 0
+            +ts(transform 0.3s, bottom 0.3s)
+    &__active
+        &:after
+            content: ''
+        .toggle-menu__line
+            &:first-child
+                top: 50%
+                +tf(translateY(-50%) rotate(-45deg))
+            &:nth-child(2)
+                right: 100%
+                opacity: 0
+            &:last-child
+                bottom: 50%
+                +tf(translateY(50%) rotate(45deg))
+.nav
+    display: none
+    position: absolute
+    top: 100%
+    left: 0
+    width: 100%
+    background: $purple
+    padding: 0 0 10px
+    z-index: 3
+    &__link
+        display: block
+        text-align: center
+        color: #fff
+        padding: 10px 0
+        &:after, &:before
+            content: ''
+            display: block
+            position: absolute
+            left: 50%
+            +tf(translateX(-50%))
+            +ts(width 0.3s)
+            height: 1px
+            width: 0
+            background: #fff
+        &:after
+            bottom: 0
+        &:before
+            top: 0
+        &:hover
+            &:after, &:before
+                width: 100%
+.logo
+    font-family: 'Pacifico', 'Arial', cursive;
+    line-height: 48px
+    text-align: center
+    color: #fff
+.slider
+    overflow: hidden
+    &__wrapper
+        height: 350px
+        +ts(transform .3s)
+.item-slider
+    height: 100%
+    width: 100%
+    float: left
+    &:after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        background: rgba(0,0,0,0.4)
+        z-index: 2
+    &__image
+        position: absolute
+        display: block
+        max-width: none
+        top: 50%
+        left: 0
+        +tf(translate(0%, -50%))
+    &__title
+        padding: 25px 35px
+        top: 50%
+        color: #ffffff
+        text-transform: uppercase
+        text-align: center
+        +tf(translateY(-50%))
+        z-index: 3
+        &:after, &:before
+            content: ''
+            position: absolute
+            left: 50%
+            +tf(translateX(-50%))
+            background: #fff
+            height: 2px
+            width: 130px
+        &:after
+            bottom: 0
+        &:before
+            top: 0
+.arrow
+    position: absolute
+    top: 50%
+    width: 30px
+    height: 70px
+    line-height: 70px
+    background: rgba(0,0,0,.4)
+    cursor: pointer
+    +tf(translateY(-50%))
+    z-index: 2
+    &:after
+        content: ''
+        position: absolute
+        display: block
+        top: 50%
+        width: 15px
+        height: 15px
+        border-bottom: 1px solid $turq
+    &__next
+        right: 0
+        &:after
+            right: 50%
+            border-right: 1px solid $turq
+            +tf(translate(50%, -50%) rotate(-45deg))
+    &__prev
+        left: 0
+        &:after
+            +tf(translate(-50%, -50%) rotate(45deg))
+            left: 50%
+            border-left: 1px solid $turq
