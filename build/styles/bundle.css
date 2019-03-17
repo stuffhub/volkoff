@@ -730,6 +730,7 @@ section.about:before {
   text-align: center;
   cursor: pointer;
   padding: 10px 20px;
+  width: 100%;
 }
 
 .feedback .btn-wrap,
@@ -742,13 +743,19 @@ section.about:before {
   width: 100%;
 }
 
-.feedback .btn-wrap .btn {
-  width: 100%;
-}
-
 .feedback__item {
   width: 100%;
   margin-bottom: 20px;
+}
+
+.feedback__item:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #A2508A;
 }
 
 .feedback__input {
@@ -764,6 +771,5 @@ section.about:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border-bottom: 2px solid #A2508A;
   z-index: 1;
 }
