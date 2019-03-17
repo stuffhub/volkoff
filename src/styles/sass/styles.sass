@@ -1,6 +1,8 @@
 $pink: #A2508A
 $purple: #32273C
 $turq: #4ECAA3
+$main: #A2508A
+$main-dark: #313131
 =mq($val)
     @media screen and (min-width:$val)
         @content
@@ -15,8 +17,29 @@ $turq: #4ECAA3
     -o-transition: $val
     -webkit-transition: $val
     transition: $val
+
+::-webkit-input-placeholder
+  color: $main
+  font-size: 14px
+  font-family: 'Arial', sans-serif
+
+::-moz-placeholder
+  color: $main
+  font-size: 14px
+  font-family: 'Roboto', 'Arial', sans-serif
+
+::-moz-placeholder
+  color: $main
+  font-size: 14px
+  font-family: 'Roboto', 'Arial', sans-serif
+
+::-ms-input-placeholder
+  color: $main
+  font-size: 14px
+  font-family: 'Roboto', 'Arial', sans-serif
+
 header
-    background: $purple
+    background: $main-dark
     .container
         padding: 15px
     .fl
@@ -42,7 +65,7 @@ header
         display: block
         height: 2px
         width: 100%
-        background: $turq
+        background: $main
         z-index: 1
         &:first-child
             top: 0
@@ -77,7 +100,7 @@ header
     top: 100%
     left: 0
     width: 100%
-    background: $purple
+    background: $main-dark
     padding: 0 0 10px
     z-index: 5
     &__link
@@ -145,7 +168,7 @@ header
             position: absolute
             left: 50%
             +tf(translateX(-50%))
-            background: $turq
+            background: $main
             height: 2px
             width: 130px
         &:after
@@ -169,30 +192,42 @@ header
         top: 50%
         width: 15px
         height: 15px
-        border-bottom: 1px solid $turq
+        border-bottom: 1px solid $main
     &__next
         right: 0
         &:after
             right: 50%
-            border-right: 1px solid $turq
+            border-right: 1px solid $main
             +tf(translate(50%, -50%) rotate(-45deg))
     &__prev
         left: 0
         &:after
             +tf(translate(-50%, -50%) rotate(45deg))
             left: 50%
-            border-left: 1px solid $turq
+            border-left: 1px solid $main
 section
     padding: 40px 0
     &.slider
         padding: 0
-    &.about
+    &.about, &.feedback
         background: #E1E0DF
+    &.about
+        padding: 40px 0 175px
+        &:before
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            z-index: 0
+            width: 100%
+            height: 264px
+            background: url('../img/tree-bg.png') no-repeat
+            background-position: center
 .title-wrap
     text-align: center
 .title
     display: inline-block
-    color: $turq
+    color: $main
     text-align: center
     text-transform: uppercase
     font-size: 32px
@@ -209,20 +244,37 @@ section
         -moz-box-sizing: border-box
         box-sizing: border-box
         +ts(width .3s, height .3s)
+        z-index: 0
     &:after
         bottom: 0
         right: 0
-        border-right: 2px solid $turq
-        border-bottom: 2px solid $turq
+        border-right: 2px solid $main
+        border-bottom: 2px solid $main
     &:before
         top: 0
         left: 0
-        border-left: 2px solid $turq
-        border-top: 2px solid $turq
+        border-left: 2px solid $main
+        border-top: 2px solid $main
     &:hover
         &:after, &:before
             width: 100%
             height: 100%
+.lines-sides
+    padding: 15px 40px
+    &:after, &:before
+        content: ''
+        position: absolute
+        display: block
+        top: 50%
+        +tf(translateY(-50%))
+        height: 2px
+        background: $main
+    &:before
+        left: 0
+        width: 30px
+    &:after
+        right: 0
+        width: 30px
 .subtitle
     text-align: center
     color: #333
@@ -231,7 +283,7 @@ section
 .desc
     color: #333333
 .advantages
-    background: $purple
+    background: $main-dark
 .advantage
     &:not(:first-child)
         margin-top: 30px
@@ -257,7 +309,7 @@ section
             height: 100%
             width: 100%
             border-radius: 50%
-            border: 1px solid $turq
+            border: 2px solid $main
             -webkit-box-sizing: border-box
             -moz-box-sizing: border-box
             box-sizing: border-box
@@ -284,7 +336,35 @@ section
     display: inline-block
     margin: 0 auto
     min-width: 1px
-    color: $turq
+    color: $main
     text-align: center
     cursor: pointer
     padding: 10px 20px
+%flex
+    -webkit-flex: 0 1 auto
+    flex: 0 1 auto
+.feedback
+    .btn-wrap
+        @extend %flex
+        width: 100%
+        .btn
+            width: 100%
+    &__item
+        @extend %flex
+        width: 100%
+        margin-bottom: 20px
+    &__input
+        position: relative
+        display: block
+        color: #333
+        background: transparent
+        line-height: 50px
+        height: 50px
+        font-size: 18px
+        width: 100%
+        padding-left: 15px
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+        border-bottom: 2px solid $main
+        z-index: 1

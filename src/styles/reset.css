@@ -130,8 +130,6 @@ ul {
 
 html {
   font-size: 100%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
 }
 
 html,
@@ -146,6 +144,11 @@ body {
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
+
+input {
+    border: 0;
+}
+
 a {
   color: inherit;
   -o-transition: color 0.2s;
