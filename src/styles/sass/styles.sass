@@ -79,7 +79,7 @@ header
     width: 100%
     background: $purple
     padding: 0 0 10px
-    z-index: 3
+    z-index: 5
     &__link
         display: block
         text-align: center
@@ -198,6 +198,7 @@ section
     font-size: 32px
     margin-bottom: 30px
     padding: 15px
+.lines
     &:after, &:before
         content: ''
         position: absolute
@@ -226,6 +227,64 @@ section
     text-align: center
     color: #333
     font-size: 18px
-    margin-bottom: 15px
+    margin-bottom: 25px
 .desc
-    color: #333
+    color: #333333
+.advantages
+    background: $purple
+.advantage
+    &:not(:first-child)
+        margin-top: 30px
+    &__wrapper
+        width: 234px
+        height: 234px
+        margin: 0 auto 25px
+        &-inner
+            border-radius: 50%
+            overflow: hidden
+            width: 214px
+            height: 214px
+            margin: 0 auto
+            top: 50%
+            +tf(translateY(-50%))
+        &:after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            +tf(translate(-50%,-50%))
+            +ts(height .3s, width .3s)
+            height: 100%
+            width: 100%
+            border-radius: 50%
+            border: 1px solid $turq
+            -webkit-box-sizing: border-box
+            -moz-box-sizing: border-box
+            box-sizing: border-box
+            z-index: 2
+        &:hover
+            &:after
+                width: 214px
+                height: 214px
+    &__image
+        min-width: 100%
+    &__title
+        text-align: center
+        color: #fff
+        font-size: 24px
+        text-transform: uppercase
+        margin-bottom: 15px
+    &__desc
+        text-align: center
+        color: #fff
+        margin-bottom: 25px
+.btn-wrap
+    text-align: center
+.btn
+    display: inline-block
+    margin: 0 auto
+    min-width: 1px
+    color: $turq
+    text-align: center
+    cursor: pointer
+    padding: 10px 20px
