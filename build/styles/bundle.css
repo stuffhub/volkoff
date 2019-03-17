@@ -141,6 +141,10 @@ body {
 
 body {
   line-height: 1;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 a {
