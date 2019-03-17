@@ -221,7 +221,7 @@ section
             z-index: 0
             width: 100%
             height: 150px
-            background: url('../img/tree-bg-150.png') no-repeat
+            background: url('../img/tree-bg-150.png') repeat
             background-position: center
 .title-wrap
     text-align: center
@@ -282,7 +282,7 @@ section
     margin-bottom: 25px
 .desc
     color: #333333
-.advantages
+.advantages, footer
     background: $main-dark
 .advantage
     &:not(:first-child)
@@ -334,12 +334,17 @@ section
 .btn
     display: inline-block
     margin: 35px auto 0
-    min-width: 1px
     color: $main
     text-align: center
     cursor: pointer
     padding: 10px 20px
     width: 100%
+    border: 2px solid $pink
+    border-radius: 10px
+    +ts(background .3s, color .3s)
+    &:hover
+        background: $pink
+        color: #fff
 %flex
     -webkit-flex: 0 1 auto
     flex: 0 1 auto
