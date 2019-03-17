@@ -519,6 +519,10 @@ section.about {
   padding: 15px;
 }
 
+.lines {
+  cursor: pointer;
+}
+
 .lines:after,
 .lines:before {
   content: '';
@@ -596,6 +600,7 @@ section.about {
 
 .advantage__wrapper:after {
   content: '';
+  cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;
