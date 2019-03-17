@@ -103,7 +103,7 @@ header
             &:after, &:before
                 width: 100%
 .logo
-    font-family: 'Pacifico', 'Arial', cursive;
+    font-family: 'Pacifico', 'Arial', cursive
     line-height: 48px
     text-align: center
     color: #fff
@@ -145,7 +145,7 @@ header
             position: absolute
             left: 50%
             +tf(translateX(-50%))
-            background: #fff
+            background: $turq
             height: 2px
             width: 130px
         &:after
@@ -182,3 +182,50 @@ header
             +tf(translate(-50%, -50%) rotate(45deg))
             left: 50%
             border-left: 1px solid $turq
+section
+    padding: 40px 0
+    &.slider
+        padding: 0
+    &.about
+        background: #E1E0DF
+.title-wrap
+    text-align: center
+.title
+    display: inline-block
+    color: $turq
+    text-align: center
+    text-transform: uppercase
+    font-size: 32px
+    margin-bottom: 30px
+    padding: 15px
+    &:after, &:before
+        content: ''
+        position: absolute
+        display: block
+        width: 30px
+        height: 20px
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+        +ts(width .3s, height .3s)
+    &:after
+        bottom: 0
+        right: 0
+        border-right: 2px solid $turq
+        border-bottom: 2px solid $turq
+    &:before
+        top: 0
+        left: 0
+        border-left: 2px solid $turq
+        border-top: 2px solid $turq
+    &:hover
+        &:after, &:before
+            width: 100%
+            height: 100%
+.subtitle
+    text-align: center
+    color: #333
+    font-size: 18px
+    margin-bottom: 15px
+.desc
+    color: #333
