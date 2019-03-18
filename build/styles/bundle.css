@@ -116,7 +116,7 @@ a {
 
 body {
   line-height: 1;
-  font-family: 'Roboto', 'Arial' sans-serif;
+  font-family: 'Geometria Regular', 'Arial' sans-serif;
 }
 
 ol,
@@ -203,28 +203,33 @@ img {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
+.fl > * {
+  -webkit-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
 ::-webkit-input-placeholder {
   color: #A2508A;
   font-size: 14px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Geometria Regular', 'Arial', sans-serif;
 }
 
 ::-moz-placeholder {
   color: #A2508A;
   font-size: 14px;
-  font-family: 'Roboto', 'Arial', sans-serif;
+  font-family: 'Geometria Regular', 'Arial', sans-serif;
 }
 
 ::-moz-placeholder {
   color: #A2508A;
   font-size: 14px;
-  font-family: 'Roboto', 'Arial', sans-serif;
+  font-family: 'Geometria Regular', 'Arial', sans-serif;
 }
 
 ::-ms-input-placeholder {
   color: #A2508A;
   font-size: 14px;
-  font-family: 'Roboto', 'Arial', sans-serif;
+  font-family: 'Geometria Regular', 'Arial', sans-serif;
 }
 
 header {
@@ -523,7 +528,8 @@ header .fl {
   border-left: 1px solid #A2508A;
 }
 
-section {
+section,
+footer {
   padding: 40px 0;
 }
 
@@ -560,7 +566,8 @@ section.about:before {
   display: inline-block;
   color: #A2508A;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-family: 'Geometria Medium', 'Arial', cursive;
   font-size: 32px;
   margin-bottom: 30px;
   padding: 15px;
@@ -646,6 +653,10 @@ section.about:before {
 .advantages,
 footer {
   background: #313131;
+}
+
+.advantage {
+  width: 100%;
 }
 
 .advantage:not(:first-child) {
@@ -743,19 +754,12 @@ footer {
   color: #fff;
 }
 
-.feedback .btn-wrap,
-.feedback__item {
-  -webkit-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-
 .feedback .btn-wrap {
   width: 100%;
 }
 
 .feedback__item {
   width: 100%;
-  margin-bottom: 20px;
 }
 
 .feedback__item:before {
@@ -766,6 +770,10 @@ footer {
   height: 2px;
   width: 100%;
   background: #A2508A;
+}
+
+.feedback__item:not(:nth-last-child(2)) {
+  margin-bottom: 20px;
 }
 
 .feedback__input {
@@ -782,4 +790,21 @@ footer {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   z-index: 1;
+}
+
+.footer-block {
+  width: 100%;
+  color: #fff;
+}
+
+.footer-block:not(:first-child) {
+  margin-top: 25px;
+  border-top: 1px solid #A2508A;
+  padding-top: 25px;
+}
+
+.footer-block__title {
+  color: #A2508A;
+  font-size: 22px;
+  margin-bottom: 15px;
 }

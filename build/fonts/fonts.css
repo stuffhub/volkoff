@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Geometria Regular";
+  src: url("./Geometria.eot");
+  src: url("./Geometria.eot?#iefix") format("embedded-opentype"),
+    url("./Geometria.woff") format("woff"),
+    url("./Geometria.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Geometria Medium";
+    src: url("./Geometria-Medium.eot");
+    src: url("./Geometria-Medium.eot?#iefix") format("embedded-opentype"),
+      url("./Geometria-Medium.woff") format("woff"),
+      url("./Geometria-Medium.ttf") format("truetype");
+  }

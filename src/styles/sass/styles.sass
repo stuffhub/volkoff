@@ -21,22 +21,22 @@ $main-dark: #313131
 ::-webkit-input-placeholder
   color: $main
   font-size: 14px
-  font-family: 'Arial', sans-serif
+  font-family: 'Geometria Regular', 'Arial', sans-serif
 
 ::-moz-placeholder
   color: $main
   font-size: 14px
-  font-family: 'Roboto', 'Arial', sans-serif
+  font-family: 'Geometria Regular', 'Arial', sans-serif
 
 ::-moz-placeholder
   color: $main
   font-size: 14px
-  font-family: 'Roboto', 'Arial', sans-serif
+  font-family: 'Geometria Regular', 'Arial', sans-serif
 
 ::-ms-input-placeholder
   color: $main
   font-size: 14px
-  font-family: 'Roboto', 'Arial', sans-serif
+  font-family: 'Geometria Regular', 'Arial', sans-serif
 
 header
     background: $main-dark
@@ -205,8 +205,9 @@ header
             +tf(translate(-50%, -50%) rotate(45deg))
             left: 50%
             border-left: 1px solid $main
-section
+section, footer
     padding: 40px 0
+section
     &.slider
         padding: 0
     &.about, &.feedback
@@ -229,7 +230,8 @@ section
     display: inline-block
     color: $main
     text-align: center
-    text-transform: uppercase
+    text-transform: capitalize
+    font-family: 'Geometria Medium', 'Arial', cursive
     font-size: 32px
     margin-bottom: 30px
     padding: 15px
@@ -285,6 +287,7 @@ section
 .advantages, footer
     background: $main-dark
 .advantage
+    width: 100%
     &:not(:first-child)
         margin-top: 40px
     &__wrapper
@@ -345,17 +348,11 @@ section
     &:hover
         background: $pink
         color: #fff
-%flex
-    -webkit-flex: 0 1 auto
-    flex: 0 1 auto
 .feedback
     .btn-wrap
-        @extend %flex
         width: 100%
     &__item
-        @extend %flex
         width: 100%
-        margin-bottom: 20px
         &:before
             content: ''
             position: absolute
@@ -364,6 +361,8 @@ section
             height: 2px
             width: 100%
             background: $main
+        &:not(:nth-last-child(2))
+            margin-bottom: 20px
     &__input
         position: relative
         display: block
@@ -378,3 +377,14 @@ section
         -moz-box-sizing: border-box
         box-sizing: border-box
         z-index: 1
+.footer-block
+    width: 100%
+    color: #fff
+    &:not(:first-child)
+        margin-top: 25px
+        border-top: 1px solid $main
+        padding-top: 25px
+    &__title
+        color: $main
+        font-size: 22px
+        margin-bottom: 15px

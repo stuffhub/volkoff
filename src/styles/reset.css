@@ -116,7 +116,7 @@ a {
 
 body {
   line-height: 1;
-  font-family: 'Roboto', 'Arial' sans-serif;
+  font-family: 'Geometria Regular', 'Arial' sans-serif;
 }
 
 ol,
@@ -201,4 +201,9 @@ img {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
+}
+
+.fl > * {
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
 }
