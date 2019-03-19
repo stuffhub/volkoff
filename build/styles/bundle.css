@@ -1025,3 +1025,7 @@ footer {
     margin: 0 -15px;
   }
 }
+
+.animated {
+  opacity: 0;
+}

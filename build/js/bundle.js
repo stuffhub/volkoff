@@ -206,6 +206,28 @@ var hamburger = __webpack_require__(/*! ./hamburger */ "./src/js/hamburger.js");
 
 var gallery = __webpack_require__(/*! ./gallery */ "./src/js/gallery.js");
 
+var scroll = __webpack_require__(/*! ./scroll */ "./src/js/scroll.js");
+
+/***/ }),
+
+/***/ "./src/js/scroll.js":
+/*!**************************!*\
+  !*** ./src/js/scroll.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).on('load scroll', function () {
+  var bottomPosition = $(this).scrollTop() + $(this).height();
+  $('.animated').each(function () {
+    var elementPosition = $(this).offset().top;
+
+    if (bottomPosition > elementPosition) {
+      $(this).addClass('fadeInUp');
+    }
+  });
+});
+
 /***/ })
 
 /******/ });
