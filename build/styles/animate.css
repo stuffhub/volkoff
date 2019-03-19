@@ -1604,9 +1604,42 @@
   }
 }
 
+@-webkit-keyframes fadeInUpTitle {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0) translateY(-50%);
+      transform: translate3d(0, 100%, 0) translateY(-50%);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) translateY(-50%);
+      transform: translate3d(0, 0, 0) translateY(-50%);
+    }
+  }
+  
+  @keyframes fadeInUpTitle {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0) translateY(-50%);
+      transform: translate3d(0, 100%, 0) translateY(-50%);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0) translateY(-50%);
+      transform: translate3d(0, 0, 0) translateY(-50%);
+    }
+  }
+
 .fadeInUp {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+}
+
+.item-slider__title.fadeInUp {
+    -webkit-animation-name: fadeInUpTitle;
+    animation-name: fadeInUpTitle;
 }
 
 @-webkit-keyframes fadeInUpBig {
